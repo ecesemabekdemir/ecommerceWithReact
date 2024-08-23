@@ -25,15 +25,16 @@ export default function App() {
   );
 }
 
-function Header({ open, setOpen  }) {
+function Header({ open, setOpen }) {
   const [menuOpen, setMenuOpen] = useState(false);
-  const toogleMenu = () => {setMenuOpen(!menuOpen);
+  const toogleMenu = () => {
+    setMenuOpen(!menuOpen);
   };
   return (
     <>
       <div className="header">
         <div className="logo">
-            <img src="./img/logo.svg" alt="" />
+          <img src="./img/logo.svg" alt="" />
         </div>
         <div className="basketLogo">
           <button onClick={() => setOpen(true)} className="sepet">
@@ -44,6 +45,15 @@ function Header({ open, setOpen  }) {
           </button>
         </div>
       </div>
+
+      <div className="navbar">
+          <li>Collections</li>
+          <li>Men</li>
+          <li>Women</li>
+          <li>About</li>
+          <li>Contact</li>
+      </div>
+
       {menuOpen && (
         <>
           <div className="overlay" onClick={toogleMenu}></div>
